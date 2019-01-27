@@ -1653,6 +1653,11 @@ class Model
 		{
 			throw new RecordNotFound("Couldn't find ".get_called_class()." without an ID");
 		}
+		
+		if (!is_array($values))
+		{
+			$values = array( $values );
+		}
 
 		$table = static::table();
 
